@@ -31,6 +31,17 @@ Publish the notebook series in order and link each notebook to the matching GitH
 4. Publish notebook publicly.
 5. Record Kaggle URL + Git commit in `docs/notebook_index.md`.
 
+## Metadata bootstrap (optional, recommended)
+
+Generate Kaggle `kernel-metadata.json` templates for all notebooks:
+
+```powershell
+py -3.11 scripts/init_kaggle_kernels.py --username <your-kaggle-username>
+```
+
+Output folder:
+- `kaggle/kernels/<notebook-slug>/kernel-metadata.json`
+
 ## Suggested commit strategy
 
 1. `chore: initialize lidar roraima portfolio scaffold`
