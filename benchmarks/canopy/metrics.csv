@@ -1,0 +1,2 @@
+timestamp_utc,project,model_name,params_hash,fold_scheme,artifact_path,kaggle_notebook_url,mae,r2,rmse,macro_f1,macro_f1_recomputed,macro_precision,macro_recall
+2026-03-03T16:53:11.522798+00:00,canopy,baseline,7d54bdb74401,tile_blocked_5,C:\Users\alexy\Documents\ChatGPT_projects\LIDAR RORAIMA\artifacts\models\canopy_baseline.joblib,,1.5595886175679057,-0.0421350013429083,2.1237543379382613,,,,
