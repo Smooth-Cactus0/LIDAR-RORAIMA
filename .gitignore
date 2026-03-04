@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Artifacts
+lidar_data/
+artifacts/features/
+artifacts/models/
+artifacts/inference/
+artifacts/**/*.parquet
+artifacts/**/*.csv
+
+# OS
+Thumbs.db
+.DS_Store

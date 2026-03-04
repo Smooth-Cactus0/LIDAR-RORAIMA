@@ -1,0 +1,11 @@
+[
+  {"class_id": 0, "class_name": "Created, never classified"},
+  {"class_id": 1, "class_name": "Unclassified"},
+  {"class_id": 2, "class_name": "Ground"},
+  {"class_id": 3, "class_name": "Low vegetation"},
+  {"class_id": 4, "class_name": "Medium vegetation"},
+  {"class_id": 5, "class_name": "High vegetation"},
+  {"class_id": 6, "class_name": "Building"},
+  {"class_id": 7, "class_name": "Low point/noise"},
+  {"class_id": 9, "class_name": "Water"}
+]
