@@ -15,6 +15,7 @@ artifacts/**/*.parquet
 artifacts/**/*.csv
 kaggle/kernels/
 kaggle/outputs/
+kaggle/pulled/
 
 # OS
 Thumbs.db

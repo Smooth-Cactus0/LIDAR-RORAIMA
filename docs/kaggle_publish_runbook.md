@@ -50,6 +50,12 @@ Output folder:
 py -3.11 scripts/kaggle_bulk_push.py --username <your-kaggle-username>
 ```
 
+To chain outputs notebook-to-notebook (Kaggle Notebook Output), use:
+
+```powershell
+py -3.11 scripts/kaggle_bulk_push.py --username <your-kaggle-username> --chain-previous
+```
+
 2. Check execution status for all notebooks:
 
 ```powershell

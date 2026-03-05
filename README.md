@@ -8,11 +8,22 @@ This repo contains two subprojects built on a shared geospatial pipeline:
 1. Canopy height prediction (CHM regression)
 2. Land-cover prediction (LAS class supervision)
 
-## Why this repo exists
+## Project goals
 
 - Demonstrate geospatial/ML engineering competence end-to-end.
 - Publish a coherent Kaggle notebook series linked to GitHub commits.
 - Track benchmarks and visuals in a recruiter-friendly format.
+
+## Current status (March 5, 2026)
+
+- Shared notebooks complete locally: `00`, `01`.
+- Canopy track complete locally: `10`, `11`, `12`, `13`.
+- Land-cover track complete locally: `20`, `21`, `22`, `23`.
+- Showcase notebook complete locally: `90`.
+- Kaggle executions validated so far: `00`, `01`, `10`, `11`, `12`.
+
+Notebook publication tracker:
+- `docs/notebook_index.md`
 
 ## Repository layout
 
@@ -26,16 +37,27 @@ This repo contains two subprojects built on a shared geospatial pipeline:
 - `images/` EDA and benchmark figures
 - `docs/notebook_index.md` Kaggle/GitHub publication tracker
 
-## Current verified status
+## Verified dataset facts
 
-- Full manifest generated from local dataset:
-  - `artifacts/manifests/tile_manifest.parquet`
-- Full 10m feature extraction completed:
-  - 4 zone partitions
-  - 3,673,706 engineered grid cells
-- Baseline models trained:
-  - canopy baseline RMSE/MAE/R2 logged
-  - land-cover baseline macro-F1/precision/recall logged
+- 45 `.laz` tiles detected (including 1 `.copc.laz` duplicate representation).
+- 2,249,752,652 points from LAS headers.
+- CRS mix detected across EPSG `31974`, `31975`, `31980`.
+- Duplicate tile handling and CRS-aware partitioning enforced in pipeline.
+
+## Baseline benchmark snapshot
+
+- Canopy baseline:
+  - RMSE `2.1238`
+  - MAE `1.5596`
+  - R2 `-0.0421`
+- Land-cover baseline:
+  - Macro-F1 `0.2934`
+  - Macro-Precision `0.2628`
+  - Macro-Recall `0.3333`
+
+Metric sources:
+- `benchmarks/canopy/metrics.csv`
+- `benchmarks/landcover/metrics.csv`
 
 ## Quickstart (Windows, Python 3.11)
 
@@ -63,7 +85,7 @@ py -3.11 scripts/train_all.py --profile local_smoke
 Profiles are defined in:
 - `src/lidar_roraima/runtime.py`
 
-## Notebook publication order
+## Notebook sequence
 
 1. `00_metadata_eda.ipynb`
 2. `01_feature_engineering_shared.ipynb`
