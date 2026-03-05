@@ -95,6 +95,19 @@ Metric sources:
 - `benchmarks/canopy/metrics.csv`
 - `benchmarks/landcover/metrics.csv`
 
+## Results table
+
+| Track | Model | RMSE | MAE | R2 | Macro-F1 | Macro-Precision | Macro-Recall | Status |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| Canopy | Baseline | 2.1238 | 1.5596 | -0.0421 | - | - | - | Complete |
+| Canopy | Random Forest | TBD | TBD | TBD | - | - | - | Pending benchmark sync |
+| Canopy | Boosting | TBD | TBD | TBD | - | - | - | Pending benchmark sync |
+| Canopy | Ensemble | TBD | TBD | TBD | - | - | - | Pending benchmark sync |
+| Land-cover | Baseline | - | - | - | 0.2934 | 0.2628 | 0.3333 | Complete |
+| Land-cover | Random Forest | - | - | - | TBD | TBD | TBD | Pending benchmark sync |
+| Land-cover | Boosting | - | - | - | TBD | TBD | TBD | Pending benchmark sync |
+| Land-cover | Ensemble | - | - | - | TBD | TBD | TBD | Pending benchmark sync |
+
 ## Why this repo is portfolio-focused
 
 - End-to-end reproducibility from raw LiDAR to model artifacts.
