@@ -4,6 +4,17 @@
 
 Predict grid-level canopy height (`target_chm`) from LiDAR-derived features.
 
+## Data usage
+
+- Input: `artifacts/features/features_*_10m.parquet`
+- Signal features: height percentiles, return behavior, intensity, roughness, density
+- Target: `target_chm` built from canopy-ground elevation logic
+
+## Visuals
+
+![CHM distribution](../../images/canopy/chm_target_distribution.png)
+![Feature signal vs CHM](../../images/eda/feature_signal_vs_chm.png)
+
 ## Model Track
 
 1. `10_canopy_baseline.ipynb`
@@ -14,7 +25,6 @@ Predict grid-level canopy height (`target_chm`) from LiDAR-derived features.
 ## Inputs
 
 - `artifacts/features/features_*_10m.parquet`
-- target from canopy-ground class elevation deltas
 
 ## Benchmark Artifacts
 

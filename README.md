@@ -8,11 +8,15 @@ This repo contains two subprojects built on a shared geospatial pipeline:
 1. Canopy height prediction (CHM regression)
 2. Land-cover prediction (LAS class supervision)
 
-## Project goals
+## What this data is
 
-- Demonstrate geospatial/ML engineering competence end-to-end.
-- Publish a coherent Kaggle notebook series linked to GitHub commits.
-- Track benchmarks and visuals in a recruiter-friendly format.
+This dataset contains airborne LiDAR tiles (`.laz`) over the Roraima Parima region.
+Each point carries 3D geometry and LiDAR attributes (height, intensity, return structure, LAS class).
+
+In this project, points are transformed into **10m grid cells** and used for:
+
+1. **Canopy Height Modeling (CHM regression)** at grid-cell level.
+2. **Land-cover prediction** using LAS `classification` labels.
 
 ## Current status (March 5, 2026)
 
@@ -25,6 +29,25 @@ This repo contains two subprojects built on a shared geospatial pipeline:
 Notebook publication tracker:
 - `docs/notebook_index.md`
 
+## Visual overview
+
+### Spatial coverage and data volume
+
+![Coverage by zone](images/eda/coverage_by_zone.png)
+
+### Canopy target signal
+
+![CHM distribution](images/canopy/chm_target_distribution.png)
+![Feature signal vs CHM](images/eda/feature_signal_vs_chm.png)
+
+### Land-cover supervision balance
+
+![Land-cover class distribution](images/landcover/landcover_class_distribution.png)
+
+### Baseline performance snapshot
+
+![Baseline benchmark snapshot](images/eda/baseline_benchmark_snapshot.png)
+
 ## Repository layout
 
 - `lidar_data/` raw LAZ tiles (local only)
@@ -35,6 +58,7 @@ Notebook publication tracker:
 - `subprojects/land-cover/` land-cover-focused docs and benchmark context
 - `benchmarks/` exported model metrics
 - `images/` EDA and benchmark figures
+- `docs/project_overview.md` concise technical story with visuals
 - `docs/notebook_index.md` Kaggle/GitHub publication tracker
 
 ## Verified dataset facts
@@ -43,6 +67,18 @@ Notebook publication tracker:
 - 2,249,752,652 points from LAS headers.
 - CRS mix detected across EPSG `31974`, `31975`, `31980`.
 - Duplicate tile handling and CRS-aware partitioning enforced in pipeline.
+
+## What we built
+
+1. **Manifest + QA layer**
+   - Header/VLR audit, CRS detection, duplicate detection, and per-tile quality flags.
+2. **Shared feature pipeline**
+   - Gridded LiDAR features (`height percentiles`, `intensity`, `return ratios`, `roughness`, `density`).
+3. **Two model tracks**
+   - Canopy regression notebooks (`10` to `13`).
+   - Land-cover classification notebooks (`20` to `23`).
+4. **Inference showcase**
+   - Final notebook `90` for end-to-end predictions and portfolio delivery.
 
 ## Baseline benchmark snapshot
 
@@ -58,6 +94,13 @@ Notebook publication tracker:
 Metric sources:
 - `benchmarks/canopy/metrics.csv`
 - `benchmarks/landcover/metrics.csv`
+
+## Why this repo is portfolio-focused
+
+- End-to-end reproducibility from raw LiDAR to model artifacts.
+- Explicit handling of geospatial pitfalls (mixed CRS zones, duplicate tiles, spatial leakage).
+- Clear notebook progression and publication index for external review.
+- Visual outputs designed for fast skimming by recruiters and collaborators.
 
 ## Quickstart (Windows, Python 3.11)
 

@@ -4,6 +4,16 @@
 
 Predict grid-level land-cover classes from LiDAR feature vectors using LAS classification as supervision.
 
+## Data usage
+
+- Input: `artifacts/features/features_*_10m.parquet`
+- Label source: LAS `classification` mapped by `configs/landcover_class_map.json`
+- Focus: class-wise behavior and macro metrics (not only accuracy)
+
+## Visuals
+
+![Land-cover class distribution](../../images/landcover/landcover_class_distribution.png)
+
 ## Model Track
 
 1. `20_landcover_baseline.ipynb`
