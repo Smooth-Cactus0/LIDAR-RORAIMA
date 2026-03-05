@@ -13,6 +13,8 @@ artifacts/models/
 artifacts/inference/
 artifacts/**/*.parquet
 artifacts/**/*.csv
+kaggle/kernels/
+kaggle/outputs/
 
 # OS
 Thumbs.db

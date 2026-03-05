@@ -42,6 +42,26 @@ py -3.11 scripts/init_kaggle_kernels.py --username <your-kaggle-username>
 Output folder:
 - `kaggle/kernels/<notebook-slug>/kernel-metadata.json`
 
+## Fully automated CLI workflow (recommended)
+
+1. Push all notebooks to Kaggle:
+
+```powershell
+py -3.11 scripts/kaggle_bulk_push.py --username <your-kaggle-username>
+```
+
+2. Check execution status for all notebooks:
+
+```powershell
+py -3.11 scripts/kaggle_bulk_status.py --username <your-kaggle-username>
+```
+
+3. Download all notebook outputs:
+
+```powershell
+py -3.11 scripts/kaggle_bulk_output.py --username <your-kaggle-username>
+```
+
 ## Suggested commit strategy
 
 1. `chore: initialize lidar roraima portfolio scaffold`

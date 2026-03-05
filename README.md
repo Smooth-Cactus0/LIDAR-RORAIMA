@@ -91,3 +91,15 @@ Notebooks now detect:
 - `/kaggle/input/lidar-roraima-parime-research[/lidar_data]` dataset mounts
 
 This keeps one notebook codebase usable both locally and on Kaggle.
+
+## Kaggle automation (batch)
+
+Use these scripts to avoid manual one-by-one notebook uploads:
+
+```powershell
+py -3.11 scripts/kaggle_bulk_push.py --username <your-kaggle-username>
+py -3.11 scripts/kaggle_bulk_status.py --username <your-kaggle-username>
+py -3.11 scripts/kaggle_bulk_output.py --username <your-kaggle-username>
+```
+
+Prerequisite: Kaggle API token at `%USERPROFILE%\.kaggle\kaggle.json`.
